@@ -1,0 +1,41 @@
+/* dark.css - Railscasts */
+body {
+  background: #232323 !important;
+  background-color: #232323 !important;
+}
+
+/* light.css - Solarized Light */
+/*body {*/
+/*  background: #fdf6e3 !important;*/
+/*  background-color: #fdf6e3 !important;*/
+/*}*/
+
+.reveal code {
+  font-size: 2em !important;
+  line-height: 1.5em !important;
+}
+
+.reveal h2 code {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.reveal pre code {
+  overflow: visible !important;
+}
+
+.reveal section img {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.reveal h2 {
+  line-height: 1.1em !important;
+}
+
+#loading {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
