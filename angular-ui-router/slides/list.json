@@ -1,1 +1,11 @@
-["index.md"]
+[
+    "index.md",
+    "forestcarlisle.md",
+    "yo-grunt-bower.md",
+    "install-yoeman.md",
+    "install-yoeman-generators.md",
+    "create-an-angularjs-app.md",
+    "start-your-app.md",
+    "app-welcome.md",
+    "back-to-angularui-router.md"
+]

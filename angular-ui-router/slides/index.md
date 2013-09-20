@@ -1,6 +1,4 @@
 
 # AngularUI Router
 
-From the terminal, pop in:
-
-  ```yo reveal:slide "Slide Title"```
+State machine based routing instead of URL based routing.
