@@ -1,17 +1,17 @@
 'use strict'
 
-describe 'Controller: ListCtrl', () ->
+describe 'Controller: TasksFilterControllerCtrl', () ->
 
   # load the controller's module
-  beforeEach module 'listerApp'
+  beforeEach module 'exampleApp'
 
-  ListCtrl = {}
+  TasksFilterControllerCtrl = {}
   scope = {}
 
   # Initialize the controller and a mock scope
   beforeEach inject ($controller, $rootScope) ->
     scope = $rootScope.$new()
-    ListCtrl = $controller 'ListCtrl', {
+    TasksFilterControllerCtrl = $controller 'TasksFilterControllerCtrl', {
       $scope: scope
     }
 

@@ -1,4 +1,4 @@
 
 # AngularUI Router
 
-State machine based routing instead of URL based routing.
+State Machine based routing vs URL based routing.
