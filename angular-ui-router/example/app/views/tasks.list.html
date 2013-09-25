@@ -9,10 +9,10 @@
   <tbody>
     <tr ng_repeat='task in data.tasks'>
       <td>
-        {{task.state}}
+        {{task.state | inflector:humanize}}
       </td>
       <td>
-        {{task.owner}}
+        {{task.owner | inflector:humanize}}
       </td>
       <td>
         {{task.description}}

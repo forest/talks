@@ -2,52 +2,55 @@
 
 angular.module('listerApp')
 
-.config ['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) ->
-  # handle invalid URLs
-  $urlRouterProvider
-    .otherwise '/'
+.config ['$stateProvider', '$urlRouterProvider', 'DefaultFiltersProvider', 'currentUser', 
+  ($stateProvider, $urlRouterProvider, DefaultFiltersProvider, currentUser) ->
+    # set defaults
+    DefaultFiltersProvider.setOwner(currentUser)
 
-  # configure application states and ui views
-  $stateProvider
+    # handle invalid URLs
+    $urlRouterProvider
+      .otherwise '/'
 
-    .state 'base',
-      abstract: true
-      url: ''
-      views:
-        'header':          
-          templateUrl: 'views/header.html'
+    # configure application states and ui views
+    $stateProvider
 
-    .state 'base.home',
-      url: '/'
-      views:
-        '@':
-          templateUrl: 'views/home.html'
-        'message@':          
-          templateUrl: 'views/home.message.html'
-
-    .state 'base.tasks',
-      abstract: true
-      url: '/tasks'
-      views:
-        '@':
-          templateUrl: 'views/tasks.html'
-          # controller: 'ListController'
-        'message@':          
-          template: '<div class="alert alert-info">Manage your tasks in this awesome app!</div>'
-
-    .state 'base.tasks.list',
-        url: '?state&owner&labels'
+      .state 'base',
+        abstract: true
+        url: ''
         views:
-          'filter':
-            templateUrl: 'views/tasks.filter.html'
-            controller: 'TasksFilterController'
-          'list':
-            templateUrl: 'views/tasks.list.html'
-            controller: 'TasksListController'
-        resolve:
-          resolvedTasks: ['Tasks', 'DefaultFilters', '$stateParams',
-            (Tasks, DefaultFilters, $stateParams) ->
-              Tasks.get(angular.extend($stateParams, DefaultFilters.get()))
-          ]
+          'header':          
+            templateUrl: 'views/header.html'
+
+      .state 'base.home',
+        url: '/'
+        views:
+          '@':
+            templateUrl: 'views/home.html'
+          'message@':          
+            templateUrl: 'views/home.message.html'
+
+      .state 'base.tasks',
+        abstract: true
+        url: '/tasks'
+        views:
+          '@':
+            templateUrl: 'views/tasks.html'
+          'message@':          
+            templateUrl: 'views/tasks.message.html'
+
+      .state 'base.tasks.list',
+          url: '?state&owner&labels'
+          views:
+            'filter':
+              templateUrl: 'views/tasks.filter.html'
+              controller: 'TasksFilterController'
+            'list':
+              templateUrl: 'views/tasks.list.html'
+              controller: 'TasksListController'
+          resolve:
+            resolvedTasks: ['Tasks', 'DefaultFilters', '$stateParams',
+              (Tasks, DefaultFilters, $stateParams) ->
+                Tasks.get(angular.extend($stateParams, DefaultFilters.get()))
+            ]
   
-  ]
+]

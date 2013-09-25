@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-angular.module('listerApp')
+angular.module('listerApp.services.tasks', [])
 
 .service('Tasks', ['$rootScope',
   class TasksService
@@ -13,13 +13,13 @@ angular.module('listerApp')
         { state: 'unstarted', owner: '', description: 'Major service.', labels: 'breaks' },
         { state: 'unstarted', owner: '', description: 'Basic service.', labels: 'tires' },
         { state: 'unstarted', owner: '', description: 'Major service.', labels: 'timing belt' },
-        { state: 'started', owner: 'Manny', description: 'Basic service.', labels: 'oil, tires, fluids' },
-        { state: 'started', owner: 'Moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
-        { state: 'started', owner: 'Manny', description: 'Major service.', labels: 'kaput' },
-        { state: 'started', owner: 'Moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
-        { state: 'started', owner: 'Jack', description: 'Major service.', labels: 'breaks, radiator' },
-        { state: 'finished', owner: 'Moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
-        { state: 'finished', owner: 'Manny', description: 'Basic service.', labels: 'oil, tires, fluids' },
+        { state: 'started', owner: 'manny', description: 'Basic service.', labels: 'oil, tires, fluids' },
+        { state: 'started', owner: 'moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
+        { state: 'started', owner: 'manny', description: 'Major service.', labels: 'kaput' },
+        { state: 'started', owner: 'moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
+        { state: 'started', owner: 'jack', description: 'Major service.', labels: 'breaks, radiator' },
+        { state: 'finished', owner: 'moe', description: 'Basic service.', labels: 'oil, tires, fluids' },
+        { state: 'finished', owner: 'manny', description: 'Basic service.', labels: 'oil, tires, fluids' },
       ]
 
       isBlank = (params) ->

@@ -1,9 +1,13 @@
-<div class="masthead">
-  <ul class="nav nav-pills pull-right">
-    <li ng-class="{ active: $state.is('base.home') }"><a href="#">Home</a></li>
-    <li ng-class="{ active: $state.is('base.list') }"><a href="#/tasks">Tasks</a></li>
-    <li><a href="#">About</a></li>
-  </ul>
+<div class="span3">
   <h3 class="muted">Lister App</h3>
 </div>
-<hr>
+<div class="span4 pull-right">
+  <ul id="main-nav" class="nav nav-pills">
+    <li ng-class="{ active: $state.is('base.home') }"><a href="#">Home</a></li>
+    <li ng-class="{ active: $state.is('base.tasks.list') }"><a ui-sref='base.tasks.list'>Tasks</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</div>
+<div class="span12">
+  <hr>
+</div>

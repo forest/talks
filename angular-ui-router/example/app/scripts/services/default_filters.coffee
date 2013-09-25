@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
-angular.module('listerApp')
+angular.module('listerApp.services.defaultFilters', [])
 
 .provider 'DefaultFilters',
   class DefaultFiltersProvider
