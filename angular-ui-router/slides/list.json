@@ -7,5 +7,14 @@
     "create-an-angularjs-app.md",
     "start-your-app.md",
     "app-welcome.md",
-    "back-to-angularui-router.md"
+    "back-to-angularui-router.md",
+    "url-based-routers.md",
+    "url-router-limitations.md",
+    "url-router-limitations-2.md",
+    "angularui-router.md",
+    "a-state-is-1.md",
+    "a-state-is-2.md",
+    "a-state-is-3.md",
+    "a-state-is-4.md",
+    "references.md"
 ]

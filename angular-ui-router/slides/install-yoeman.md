@@ -1,5 +1,5 @@
 ##  Install Yoeman
 
 ```
-npm install --global yo
+❯ npm install --global yo
 ```
