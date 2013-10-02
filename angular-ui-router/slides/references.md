@@ -6,3 +6,4 @@
 * [AngularJS State Management with ui-router](http://txt.fliglio.com/2013/05/angularjs-state-management-with-ui-router/)
 * [AngularUI Router as the infrastructure of a large scale app
 ](http://lgorithms.blogspot.com/2013/07/angularui-router-as-infrastructure-of.html)
+* [Broadcast Messaging](https://github.com/jondejong/angular-controller-messaging)
