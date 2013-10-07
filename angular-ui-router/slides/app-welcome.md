@@ -1,1 +1,1 @@
-![app_welcome](../images/app-welcome.png)
+![app_welcome](./images/app-welcome.png)
