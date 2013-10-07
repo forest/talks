@@ -13,5 +13,12 @@ To run the example
 ❯ grunt server
 ```
 
+Some examples are step-by-step. To see code for each step checkout the git branch.
+```sh
+❯ git checkout step-1
+❯ git checkout step-2
+```
+
+
 ## AngularUI Router
 State Machine based routing vs URL based routing.

@@ -40,127 +40,25 @@
 
             <div class="slides">
 
-                
-                    
-                        
-                            <section data-markdown="slides/index.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/forestcarlisle.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/yo-grunt-bower.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/install-yoeman.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/install-yoeman-generators.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/create-an-angularjs-app.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/start-your-app.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/app-welcome.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/back-to-angularui-router.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/url-based-routers.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/url-router-limitations.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/url-router-limitations-2.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/angularui-router.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/a-state-is-1.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/a-state-is-2.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/a-state-is-3.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/a-state-is-4.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/look-at-an-example.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/example.md"></section>
-                        
-                    
-                
-                    
-                        
-                            <section data-markdown="slides/references.md"></section>
-                        
-                    
-                
+                <% _.forEach(slides, function(slide) { %>
+                    <% if (_.isString(slide)) { %>
+                        <% if (slide.indexOf('.html') !== -1) { %>
+                            <section data-html="slides/<%= slide %>"></section>
+                        <% } else { if (slide.indexOf('.md') !== -1) { %>
+                            <section data-markdown="slides/<%= slide %>"></section>
+                        <% }} %>
+                    <% } else { if (_.isArray(slide)) { %>
+                        <section>
+                            <% _.forEach(slide, function(verticalslide) { %>
+                                <% if (verticalslide.indexOf('.html') !== -1) { %>
+                                    <section data-html="slides/<%= verticalslide %>"></section>
+                                <% } else { if (verticalslide.indexOf('.md') !== -1) { %>
+                                    <section data-markdown="slides/<%= verticalslide %>"></section>
+                                <% }} %>
+                            <% }); %>
+                        </section>
+                    <% }} %>
+                <% }); %>
 
             </div>
 
