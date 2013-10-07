@@ -14,4 +14,4 @@ To run the example
 ```
 
 ## AngularUI Router
-State Machine based routing vs URL based routing.
+State Machine based routing vs URL based routing. ([view](angular-ui-router/index.html))
