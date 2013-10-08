@@ -14,4 +14,8 @@ angular.module('listerApp')
       .state 'home',
         url: '/'
         templateUrl: 'views/home.html'
+
+      .state 'tasks',
+        url: '/tasks'
+        templateUrl: 'views/tasks.html'
 ]

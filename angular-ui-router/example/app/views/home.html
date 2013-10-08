@@ -3,8 +3,8 @@
 </div>
 <div class="span4 pull-right">
   <ul id="main-nav" class="nav nav-pills">
-    <li><a ui-sref='home'>Home</a></li>
-    <li><a href="#">Tasks</a></li>
+    <li ng-class="{ active: $state.is('home') }"><a ui-sref='home'>Home</a></li>
+    <li ng-class="{ active: $state.is('tasks') }"><a ui-sref='tasks'>Tasks</a></li>
     <li><a href="#">About</a></li>
   </ul>
 </div>
