@@ -1,30 +1,30 @@
 <div class='row-fluid'>
   <section class='span3'>
-    <form id='filter-form' name='filterForm' novalidate>
+    <form ng-controller="TasksFilterController" id='filter-form' name='filterForm' ng-submit='submit()' novalidate>
       <div class='control-group'>
         <label>State</label>
-        <select class='input-block-level' name='state'>
+        <select class='input-block-level' name='state' ng_model='data.filter.state' ng_options='k as v for (k,v) in data.states'>
           <option value=''>-- any --</option>
         </select>
       </div>
       <div class='control-group'>
         <label>Owner</label>
-        <select class='input-block-level' name='owner'>
+        <select class='input-block-level' name='owner' ng_model='data.filter.owner' ng_options='k as v for (k,v) in data.owners'>
           <option value=''>-- any --</option>
         </select>
       </div>
       <div class='control-group'>
         <label>Labels</label>
-        <input class='input-block-level' name='labels' type='text'>
+        <input class='input-block-level' name='labels' ng_model='data.filter.labels' type='text'>
       </div>
       <div class='form-actions'>
         <button class='btn btn-primary'>Submit</button>
-        <button class='btn'>Clear</button>
+        <button class='btn' ng_click='clear()'>Clear</button>
       </div>
     </form>
   </section>
   <section class='span9'>
-    <table class='table table-bordered table-striped'>
+    <table ng-controller="TasksListController" class='table table-bordered table-striped'>
       <thead>
         <th>State</th>
         <th>Owner</th>
@@ -33,15 +33,23 @@
         <th>Actions</th>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr ng_repeat='task in data.tasks'>
+          <td>
+            {{task.state | inflector:humanize}}
+          </td>
+          <td>
+            {{task.owner | inflector:humanize}}
+          </td>
+          <td>
+            {{task.description}}
+          </td>
+          <td>
+            {{task.labels}}
+          </td>
           <td style="text-align: center;">
-            <div class="btn-group">
-              <button class='btn btn-success btn-mini'>Start</button>
-              <button class='btn btn-inverse btn-mini'>Finish</button>
+            <div class="btn-group" ng_hide='task.state == "finished"'>
+              <button class='btn btn-success btn-mini' ng_disabled='task.state == "started"' ng_click='start(task)'>Start</button>
+              <button class='btn btn-inverse btn-mini' ng_disabled='task.state == "unstarted"' ng_click='finish(task)'>Finish</button>
             </div>
           </td>
         </tr>
