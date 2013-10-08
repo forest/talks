@@ -1,6 +1,6 @@
-// Generated on 2013-09-17 using generator-angular 0.4.0
+// Generated on 2013-10-08 using generator-angular 0.4.0
 'use strict';
-var LIVERELOAD_PORT = 35730;
+var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
 var mountFolder = function (connect, dir) {
   return connect.static(require('path').resolve(dir));
@@ -30,11 +30,11 @@ module.exports = function (grunt) {
     yeoman: yeomanConfig,
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,**/}*.coffee'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
         tasks: ['coffee:dist']
       },
       coffeeTest: {
-        files: ['test/spec/{,**/}*.coffee'],
+        files: ['test/spec/{,*/}*.coffee'],
         tasks: ['coffee:test']
       },
       compass: {
@@ -52,7 +52,7 @@ module.exports = function (grunt) {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,**/}*.js',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -70,7 +70,7 @@ module.exports = function (grunt) {
     },
     connect: {
       options: {
-        port: 9001,
+        port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost'
       },
@@ -129,7 +129,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,**/}*.js'
+        '<%= yeoman.app %>/scripts/{,*/}*.js'
       ]
     },
     coffee: {
@@ -141,7 +141,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/scripts',
-          src: '{,**/}*.coffee',
+          src: '{,*/}*.coffee',
           dest: '.tmp/scripts',
           ext: '.js'
         }]
@@ -150,7 +150,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'test/spec',
-          src: '{,**/}*.coffee',
+          src: '{,*/}*.coffee',
           dest: '.tmp/spec',
           ext: '.js'
         }]
@@ -186,7 +186,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/scripts/{,**/}*.js',
+            '<%= yeoman.dist %>/scripts/{,*/}*.js',
             '<%= yeoman.dist %>/styles/{,*/}*.css',
             '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
             '<%= yeoman.dist %>/styles/fonts/*'
