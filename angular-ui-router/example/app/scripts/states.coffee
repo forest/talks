@@ -2,7 +2,7 @@
 
 angular.module('listerApp')
 
-.config ['$stateProvider', '$urlRouterProvider', 
+.config ['$stateProvider', '$urlRouterProvider',
   ($stateProvider, $urlRouterProvider) ->
     # handle invalid URLs
     $urlRouterProvider
@@ -45,9 +45,9 @@ angular.module('listerApp')
               templateUrl: 'views/tasks.list.html'
               controller: 'TasksListController'
           resolve:
-            resolvedTasks: ['Tasks', '$stateParams',
-              (Tasks, $stateParams) ->
-                Tasks.get($stateParams)
+            resolvedTasks: ['Tasks', 'DefaultFilters', '$stateParams',
+              (Tasks, DefaultFilters, $stateParams) ->
+                Tasks.get(angular.extend($stateParams, DefaultFilters.get()))
             ]
 
 ]
