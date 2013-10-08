@@ -2,11 +2,11 @@
 
 angular.module('listerApp', [ 
     'ui.router', 
-    'listerApp.services.currentUser',
     'listerApp.services.tasks', 
-    'listerApp.services.defaultFilters',
     'listerApp.tasks.list',
-    'listerApp.tasks.filter'
+    'listerApp.tasks.filter',
+    'listerApp.services.defaultFilters',
+    'listerApp.services.currentUser',
   ])
 .run ['$rootScope', '$state', '$stateParams', 'currentUser', 
   ($rootScope, $state, $stateParams, currentUser) ->

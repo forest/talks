@@ -1,31 +1,34 @@
 'use strict'
 
-angular.module('listerApp.services.defaultFilters', [])
+angular.module('listerApp.services.defaultFilters', [
+    'listerApp.services.currentUser'
+  ])
 
-.provider 'DefaultFilters',
-  class DefaultFiltersProvider
+.service('DefaultFilters', ['currentUser',
+  class DefaultFilters
+    constructor: (user) ->
+      filters.owner = user
+
     filters =
-      state: null
-      owner: null
-      labels: null
+      state: `undefined`
+      owner: `undefined`
+      labels: `undefined`
+
+    isBlank = ->
+      filters.state is null and filters.owner is null and filters.labels is null
+
+    clear: ->
+      filters.state = null
+      filters.owner = null
+      filters.labels = null
 
     setOwner: (newOwner) ->
-      filters.owner = newOwner
+      # ng.directive:select expects string to set "selected" option attribute
+      filters.owner = (newOwner + "") unless isBlank()
 
-    $get: ->
-      isBlank = ->
-        filters.state is null and filters.owner is null and filters.labels is null
+    get: ->
+      return {} if isBlank()
 
-      clear = ->
-        filters.state = null
-        filters.owner = null
-        filters.labels = null
-
-      get = ->
-        return {} if isBlank()
-
-        copied = angular.copy(filters)
-        clear()
-        return copied
-
-      get: get
+      copied = angular.copy(filters)
+      return copied
+  ])

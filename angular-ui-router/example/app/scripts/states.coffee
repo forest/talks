@@ -2,11 +2,8 @@
 
 angular.module('listerApp')
 
-.config ['$stateProvider', '$urlRouterProvider', 'DefaultFiltersProvider', 'currentUser', 
-  ($stateProvider, $urlRouterProvider, DefaultFiltersProvider, currentUser) ->
-    # set defaults
-    DefaultFiltersProvider.setOwner(currentUser)
-
+.config ['$stateProvider', '$urlRouterProvider', 'currentUser', 
+  ($stateProvider, $urlRouterProvider, currentUser) ->
     # handle invalid URLs
     $urlRouterProvider
       .otherwise '/'
