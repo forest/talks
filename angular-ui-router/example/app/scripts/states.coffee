@@ -11,11 +11,26 @@ angular.module('listerApp')
     # configure application states and ui views
     $stateProvider
 
-      .state 'home',
-        url: '/'
-        templateUrl: 'views/home.html'
+      .state 'base',
+        abstract: true
+        url: ''
+        views:
+          'header':          
+            templateUrl: 'views/header.html'
 
-      .state 'tasks',
+      .state 'base.home',
+        url: '/'
+        views:
+          '@':
+            templateUrl: 'views/home.html'
+          'message@':          
+            templateUrl: 'views/home.message.html'
+
+      .state 'base.tasks',
         url: '/tasks'
-        templateUrl: 'views/tasks.html'
+        views:
+          '@':
+            templateUrl: 'views/tasks.html'
+          'message@':          
+            templateUrl: 'views/tasks.message.html'
 ]
