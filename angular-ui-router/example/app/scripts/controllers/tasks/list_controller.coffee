@@ -4,13 +4,10 @@ angular.module('listerApp.tasks.list', [
     'ui.inflector'
   ])
 
-.controller('TasksListController', ['$scope', 'Tasks'
-    ($scope, Tasks) ->
+.controller('TasksListController', ['$scope', 'resolvedTasks'
+    ($scope, resolvedTasks) ->
       $scope.data =
-        tasks: Tasks.get()
-
-      $scope.$on 'TasksFilterChanged', (event, filter) ->
-        $scope.data.tasks = Tasks.get(filter)
+        tasks: resolvedTasks
 
       $scope.start = (task) ->
         task.state = 'started'

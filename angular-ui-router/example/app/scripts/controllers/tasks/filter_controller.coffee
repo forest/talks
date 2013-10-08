@@ -5,24 +5,20 @@ angular.module('listerApp.tasks.filter', [
     'listerApp.services.taskOwners'
   ])
 
-.controller('TasksFilterController', ['$rootScope', '$scope', 'TaskStates', 'TaskOwners',
-    ($rootScope, $scope, TaskStates, TaskOwners) ->
+.controller('TasksFilterController', ['$scope', '$state', '$stateParams', 'TaskStates', 'TaskOwners',
+    ($scope, $state, $stateParams, TaskStates, TaskOwners) ->
       $scope.data =
         filter:
-          state: null
-          owner: null
-          labels: null
+          state: $stateParams.state
+          owner: $stateParams.owner
+          labels: $stateParams.labels
         states: TaskStates.all()
         owners: TaskOwners.all()
 
       $scope.submit = ->
         # console.log @data.filter
-        $rootScope.$broadcast('TasksFilterChanged', @data.filter)
+        $state.go 'base.tasks.list', @data.filter
 
       $scope.clear = ->
-        @data.filter.state = null
-        @data.filter.owner = null
-        @data.filter.labels = null
-        
-        $rootScope.$broadcast('TasksFilterChanged', null)
+        $state.transitionTo 'base.tasks.list'
   ])
