@@ -49,5 +49,5 @@ angular.module('listerApp')
               (Tasks, $stateParams) ->
                 Tasks.get($stateParams)
             ]
-  
+
 ]

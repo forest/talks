@@ -1,8 +1,8 @@
 'use strict'
 
-angular.module('listerApp', [ 
-    'ui.router', 
-    'listerApp.services.tasks', 
+angular.module('listerApp', [
+    'ui.router',
+    'listerApp.services.tasks',
     'listerApp.tasks.list',
     'listerApp.tasks.filter'
   ])
