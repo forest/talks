@@ -2,8 +2,8 @@
 
 angular.module('listerApp')
 
-.config ['$stateProvider', '$urlRouterProvider', 'currentUser', 
-  ($stateProvider, $urlRouterProvider, currentUser) ->
+.config ['$stateProvider', '$urlRouterProvider',
+  ($stateProvider, $urlRouterProvider) ->
     # handle invalid URLs
     $urlRouterProvider
       .otherwise '/'
@@ -15,7 +15,7 @@ angular.module('listerApp')
         abstract: true
         url: ''
         views:
-          'header':          
+          'header':
             templateUrl: 'views/header.html'
 
       .state 'base.home',
@@ -23,7 +23,7 @@ angular.module('listerApp')
         views:
           '@':
             templateUrl: 'views/home.html'
-          'message@':          
+          'message@':
             templateUrl: 'views/home.message.html'
 
       .state 'base.tasks',
@@ -32,7 +32,7 @@ angular.module('listerApp')
         views:
           '@':
             templateUrl: 'views/tasks.html'
-          'message@':          
+          'message@':
             templateUrl: 'views/tasks.message.html'
 
       .state 'base.tasks.list',
@@ -49,5 +49,5 @@ angular.module('listerApp')
               (Tasks, DefaultFilters, $stateParams) ->
                 Tasks.get(angular.extend($stateParams, DefaultFilters.get()))
             ]
-  
+
 ]

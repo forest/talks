@@ -1,12 +1,11 @@
 'use strict'
 
-angular.module('listerApp', [ 
-    'ui.router', 
-    'listerApp.services.tasks', 
+angular.module('listerApp', [
+    'ui.router',
+    'listerApp.services.tasks',
     'listerApp.tasks.list',
     'listerApp.tasks.filter',
-    'listerApp.services.defaultFilters',
-    'listerApp.services.currentUser',
+    'listerApp.services.currentUser'
   ])
 .run ['$rootScope', '$state', '$stateParams', 'currentUser', 
   ($rootScope, $state, $stateParams, currentUser) ->
