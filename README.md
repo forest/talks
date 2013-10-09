@@ -21,4 +21,4 @@ Some examples are step-by-step. To see code for each step checkout the git branc
 
 
 ## AngularUI Router
-State Machine based routing vs URL based routing. (<a href="http://forest.github.io/talks/angular-ui-router/index.html" target="_blank">view<a/>)
+Going beyond basic URL based routing. (<a href="http://forest.github.io/talks/angular-ui-router/index.html" target="_blank">view<a/>)
