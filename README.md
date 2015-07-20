@@ -22,3 +22,6 @@ Some examples are step-by-step. To see code for each step checkout the git branc
 
 ## AngularUI Router
 Going beyond basic URL based routing. (<a href="http://forest.github.io/talks/angular-ui-router/index.html" target="_blank">view<a/>)
+
+## Building API Clients
+Powered by Faraday and Virtus. (<a href="http://forest.github.io/talks/api-clients/index.html" target="_blank">view<a/>)

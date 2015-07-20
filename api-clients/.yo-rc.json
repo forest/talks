@@ -1,0 +1,9 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Building API Clients",
+    "packageVersion": "0.1.0",
+    "revealTheme": "night",
+    "useSass": false,
+    "deployToGithubPages": false
+  }
+}
