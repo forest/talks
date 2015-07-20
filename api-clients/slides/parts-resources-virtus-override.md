@@ -1,4 +1,4 @@
-##  Resources :: Virtus :: Attribute Overrides
+##  Resources :: Virtus :: Overrides
 
 Override a Virtus defined getter or setter to add custom behavior.
 
