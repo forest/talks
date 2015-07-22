@@ -20,12 +20,7 @@ class Club
 end
 
 club = Club.new(:name => 'LA Galaxy', :captain => {:name => 'Robbie Keane', :age => 35})
-club.captain # =>
-    # {
-    #        :age => 35,
-    #   :birthday => nil,
-    #       :name => "Robbie Keane"
-    # }
+club.captain # => { :age => 35, :birthday => nil, :name => "Robbie Keane" }
 club.captain.class # => Person < Object
 ```
 
@@ -34,7 +29,6 @@ Coercion for collections.
 ```ruby
 class Club
   # ...
-
   attribute :players, Set[Person]
 end
 
